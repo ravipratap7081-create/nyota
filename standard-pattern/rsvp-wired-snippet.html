@@ -1,0 +1,23 @@
+<!-- Nyota RSVP wiring snippet — standard-invite-pattern.html me paste karo.
+     Jagah: RSVP form ke existing <script> ke end me, localStorage save ke BAAD.
+     RSVP_ENDPOINT ki jagah Apps Script Web app URL daalo (deploy ke baad milta hai).
+     Behavior: local save + CSV download pehle jaise chalte rahenge; Sheet POST
+     fail ho to bhi guest ko success hi dikhega (local copy hi sach hai tab tak). -->
+<script>
+  var RSVP_ENDPOINT = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  (function () {
+    var form = document.getElementById('rsvpForm');
+    if (!form || RSVP_ENDPOINT.indexOf('PASTE_') === 0) return;
+    form.addEventListener('submit', function () {
+      try {
+        var data = new FormData(form);
+        var body = new URLSearchParams();
+        ['guest', 'fn', 'attend', 'count', 'meal'].forEach(function (k) {
+          body.append(k, data.get(k) || '');
+        });
+        fetch(RSVP_ENDPOINT, { method: 'POST', body: body })
+          .catch(function () { /* local copy already saved; Sheet sync next time */ });
+      } catch (e) { /* never break the guest-facing RSVP */ }
+    });
+  })();
+</script>

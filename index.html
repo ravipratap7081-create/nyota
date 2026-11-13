@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Shaadi Demo Invites — 4 Live Sample Invitations | Standard ₹2,499 · Premium ₹3,999</title>
+<meta name="description" content="Chaaron demo invite live dekho — countdown, karyakram, venue map aur RSVP ke saath. Pasand aaye to aapke apne naamon ke saath FREE preview, 48 ghante me. Standard ₹2,499 · Premium ₹3,999." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Digital Shaadi Invitation — Pehle Demo Dekho, Phir Free Preview Banao" />
+<meta property="og:description" content="4 live demo invites: Paramparik Hindi, Modern English, Premium Personalised aur Nikah. Free preview aapke naam ke saath — paisa tabhi jab preview pasand aaye. Standard ₹2,499 · Premium ₹3,999." />
+<meta property="og:image" content="https://nyota-demo.vercel.app/assets/asset-1.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Digital Shaadi Invitation — 4 Demo Invites" />
+<meta name="twitter:description" content="Live demo invites dekho, apne naam ka free preview banao. Standard ₹2,499 · Premium ₹3,999." />
+<meta name="twitter:image" content="https://nyota-demo.vercel.app/assets/asset-1.webp" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Noto+Serif+Devanagari:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#fdf8f0; --bg2:#f7ecd9; --card:#fffdf8; --ink:#2b1a12; --muted:#6f5744;
+  --maroon:#7a1f1f; --maroon2:#5d1414; --gold:#b8862b; --goldsoft:#e9d9ae;
+  --emerald:#14532d; --line:#e3d3b8; --chip:#f3e7cf; --ok:#1c6b3a; --warnbg:#fdf1dc;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1a110b; --bg2:#241710; --card:#2a1c11; --ink:#f5e9d6; --muted:#cbb493;
+    --maroon:#e0a458; --maroon2:#f0c078; --gold:#d9a441; --goldsoft:#4a3814;
+    --emerald:#7fc98f; --line:#4d3a22; --chip:#382818; --ok:#8fd6a4; --warnbg:#33250f;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.55}
+h1,h2,h3,.serif{font-family:"Playfair Display","Noto Serif Devanagari",serif}
+.dev{font-family:"Noto Serif Devanagari","Playfair Display",serif}
+img{max-width:100%;display:block}
+a{color:var(--maroon)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 64px}
+.hero{padding:34px 0 10px;text-align:center}
+.kicker{letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:700;color:var(--gold)}
+.hero h1{font-size:2.35rem;line-height:1.12;margin:.35em 0 .3em;font-weight:900}
+.hero p.lede{max-width:720px;margin:0 auto;color:var(--muted);font-size:1.06rem}
+.pricechips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0 6px}
+.chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:700}
+.chip b{color:var(--maroon)}
+.demolabel{display:inline-block;background:var(--maroon);color:#fff;border-radius:6px;padding:3px 10px;font-size:.8rem;font-weight:700;letter-spacing:.04em}
+@media (prefers-color-scheme: dark){.demolabel{background:#7a1f1f}}
+.model{display:grid;gap:12px;margin:26px 0 8px}
+@media(min-width:760px){.model{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left}
+.step .num{font-family:"Playfair Display",serif;font-size:1.7rem;color:var(--gold);font-weight:900}
+.step h3{margin:.15em 0 .3em;font-size:1.05rem}
+.step p{margin:0;color:var(--muted);font-size:.95rem}
+section{margin-top:44px}
+.sec-head h2{font-size:1.65rem;margin:0 0 4px}
+.sec-head p{margin:0;color:var(--muted)}
+.grid{display:grid;gap:18px;margin-top:18px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;font-size:1.3rem;line-height:1.25}
+.meta{color:var(--muted);font-size:.95rem}
+.meta b{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.78rem;font-weight:700;background:var(--goldsoft);border-radius:999px;padding:3px 10px}
+.fnlist{font-size:.93rem;color:var(--muted)}
+.btn{appearance:none;border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--maroon);color:#fff;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover{background:var(--maroon2)}
+.btn.ghost{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon)}
+.btn.small{padding:8px 14px;font-size:.92rem}
+.card .btn{margin-top:auto}
+nav.cats{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+nav.cats button{appearance:none;font:inherit;font-weight:700;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 16px}
+nav.cats button[aria-selected="true"]{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.invite{display:none;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:18px}
+.invite.active{display:block}
+.invite .banner{position:relative}
+.invite .banner img{width:100%;aspect-ratio:16/8;object-fit:cover}
+.invite .banner .overlay{position:absolute;inset:auto 0 0 0;background:rgba(20,8,2,.62);color:#fff;padding:16px 20px}
+.invite .banner .overlay h3{margin:0;font-size:1.55rem;line-height:1.2}
+.invite .banner .overlay p{margin:2px 0 0;opacity:.92}
+.invite .inner{padding:20px}
+.count{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.count div{background:var(--bg2);border:1px solid var(--line);border-radius:12px;min-width:74px;text-align:center;padding:8px 6px}
+.count b{display:block;font-size:1.35rem;font-family:"Playfair Display",serif}
+.count span{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.timeline{list-style:none;margin:14px 0;padding:0;border-left:3px solid var(--goldsoft)}
+.timeline li{padding:4px 0 14px 18px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-8px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.timeline b{font-size:1.02rem}
+.timeline .when{color:var(--muted);font-size:.93rem}
+.cols{display:grid;gap:18px}
+@media(min-width:820px){.cols{grid-template-columns:1fr 1fr}}
+form.rsvp{display:grid;gap:10px;margin-top:10px}
+form.rsvp label{font-weight:600;font-size:.95rem;display:grid;gap:4px}
+input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.radio-row{display:flex;gap:14px;flex-wrap:wrap}
+.radio-row label{display:flex;gap:6px;align-items:center;font-weight:600}
+.radio-row input{width:auto}
+.confirm{display:none;border:1.5px solid var(--ok);border-radius:12px;padding:12px 14px;margin-top:12px;background:var(--warnbg)}
+.confirm.show{display:block}
+.headcount{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.headcount div{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:.93rem}
+.headcount b{font-size:1.1rem}
+.meal{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0}
+.meal legend{font-weight:600;font-size:.95rem;padding:0 6px}
+.meal:disabled{opacity:.45}
+table.breakdown{width:100%;border-collapse:collapse;margin-top:12px;font-size:.9rem;background:var(--card)}
+table.breakdown th,table.breakdown td{padding:7px 8px;text-align:left;border-bottom:1px solid var(--line)}
+table.breakdown th{background:var(--bg2)}
+.csvbtn{margin-top:12px}
+.langtoggle{display:flex;gap:8px;margin:12px 0}
+.langtoggle button{appearance:none;font:inherit;font-weight:700;cursor:pointer;border:1.5px solid var(--maroon);background:transparent;color:var(--maroon);border-radius:999px;padding:7px 16px}
+.langtoggle button[aria-pressed="true"]{background:var(--maroon);color:#fff}
+.guestbox{background:var(--bg2);border:1px dashed var(--gold);border-radius:14px;padding:16px;margin-top:6px}
+.guestresult{display:none;margin-top:12px;border-radius:12px;padding:14px;background:var(--card);border:1px solid var(--line)}
+.guestresult.show{display:block}
+.samplecodes{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.samplecodes button{appearance:none;font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;color:var(--ink)}
+table.price{width:100%;border-collapse:collapse;margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table.price th,table.price td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.price th{background:var(--bg2);font-family:"Playfair Display",serif;font-size:1.05rem}
+table.price tr:last-child td{border-bottom:0}
+.policy{display:grid;gap:12px;margin-top:14px}
+@media(min-width:760px){.policy{grid-template-columns:repeat(3,1fr)}}
+.policy div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.policy h3{margin:0 0 4px;font-size:1rem}
+.policy p{margin:0;color:var(--muted);font-size:.93rem}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.9rem}
+footer h3{color:var(--ink);font-size:1rem}
+footer li{margin-bottom:6px}
+.note{font-size:.88rem;color:var(--muted)}
+.orn{text-align:center;color:var(--gold);font-size:1.2rem;letter-spacing:.6em;margin:8px 0 0}
+.btn.wa{background:#1f7a3d;color:#fff}
+.btn.wa:hover{background:#175c2e}
+.herocta{margin:18px 0 4px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.herocta .btn{font-size:1.08rem;padding:14px 26px}
+.cta-band{background:var(--maroon);color:#fff;border-radius:20px;padding:28px 22px;text-align:center;margin-top:44px}
+.cta-band h2{margin:0 0 6px;font-size:1.55rem;color:#fff}
+.cta-band p{margin:0 auto 16px;max-width:620px;opacity:.93}
+.cta-band .btn.wa{background:#fff;color:#175c2e;font-size:1.05rem;padding:14px 26px}
+.cta-band .btn.wa:hover{background:#eaf5ec}
+.cta-band .note{color:#f3ddc0;margin-top:12px}
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--card);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;align-items:center;box-shadow:0 -4px 18px rgba(43,26,18,.12)}
+.stickybar .txt{font-size:.9rem;font-weight:700;line-height:1.3}
+.stickybar .txt small{display:block;font-weight:400;color:var(--muted)}
+.stickybar .btn{margin-left:auto;white-space:nowrap}
+body{padding-bottom:calc(118px + env(safe-area-inset-bottom))}
+@media(min-width:760px){.stickybar{display:none}body{padding-bottom:0}}
+/* Premium (Demo 3) — asal animation, taaki "Animated" tag sach ho */
+#invite3 .banner img{animation:premZoom 14s ease-in-out infinite alternate}
+#invite3 .banner .overlay{background:linear-gradient(100deg,rgba(20,8,2,.72) 30%,rgba(84,58,10,.62) 50%,rgba(20,8,2,.72) 70%);background-size:220% 100%;animation:premShine 7s ease-in-out infinite}
+#invite3.active .inner>*{animation:premRise .7s ease both}
+#invite3.active .inner>*:nth-child(2){animation-delay:.12s}
+#invite3.active .inner>*:nth-child(3){animation-delay:.24s}
+#invite3.active .inner>*:nth-child(4){animation-delay:.36s}
+@keyframes premZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+@keyframes premShine{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+@keyframes premRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  #invite3 .banner img,#invite3 .banner .overlay,#invite3.active .inner>*{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+<!-- Vercel Web Analytics (plain HTML) -->
+<script>
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Nyota — Digital Shaadi Invites · Kanpur</div>
+  <h1>4 Demo Invites — Pehle Dekho,<br/>Phir Apna Free Preview Banao</h1>
+  <p class="lede">Ye chaar demo bilkul waisi hi invites hain jaisi aapki shaadi ke liye banegi — bas jodiyon ke naam <b>kaalpanik (fictional)</b> hain. Har demo kholo: karyakram, venue ka map, countdown aur RSVP — sab live chalega. Pasand aaye to <b>aapke apne naamon ke saath free preview</b> banega — doosri sites pehle advance leti hain, Nyota me preview FREE hai; paisa tabhi, jab preview dil ko bha jaye.</p>
+  <div class="pricechips">
+    <span class="chip">Standard · <b>₹2,499</b></span>
+    <span class="chip">Premium · <b>₹3,999</b></span>
+    <span class="chip">Free Preview · <b>48 ghante me</b></span>
+  </div>
+  <div class="herocta">
+    <a class="btn wa" href="https://wa.me/919235039317?text=Namaste!%20Mujhe%20apni%20shaadi%20ke%20liye%20digital%20invitation%20ka%20FREE%20preview%20chahiye.%0AJodi%20ke%20naam%3A%20%0AShaadi%20ki%20tareekh%3A%20%0ASheher%20%2F%20Venue%3A%20%0AKisne%20bheja%20(partner%20%2F%20shop%20ka%20naam%2C%20agar%20koi%20ho)%3A%20%0A%0A%E2%80%94%20Nyota%2C%20Digital%20Shaadi%20Invites%2C%20Kanpur" target="_blank" rel="noopener">💬 WhatsApp Par Apna Free Preview Maango</a>
+    <span class="note">Naam, tareekh aur venue bhejo — 48 ghante me preview taiyaar. Pasand na aaye to ek paisa nahi.</span>
+  </div>
+  <p class="note">Neeche har jagah <span class="demolabel">SAMPLE · DEMO</span> likha hai — ye namune hain, kisi asal shaadi ke card nahi.</p>
+
+  <div class="model">
+    <div class="step"><div class="num">1</div><h3>Free Preview — aapke naam ke saath</h3><p>Upar wale WhatsApp button se apne naam, tareekh aur venue bhejo. 48 ghante ke andar aapki asal invitation ka preview ban ke aayega — bina ek paisa diye.</p></div>
+    <div class="step"><div class="num">2</div><h3>Pasand aaye tab ₹499 advance</h3><p>Preview approved ho jaye, tabhi secure payment link se sirf ₹499 advance. Baaki paisa final delivery par. Pasand na aaye to koi payment nahi, koi zor-zabardasti nahi.</p></div>
+    <div class="step"><div class="num">3</div><h3>WhatsApp par link, sab khush</h3><p>Ek link — WhatsApp par sabko bhejo. Guest map se venue pehunche, RSVP se aapko mehmanon ki ginti pehle se pata. Card chhapwane ka kharcha aur jhanjhat dono khatam.</p></div>
+  </div>
+</header>
+
+<section id="gallery">
+  <div class="sec-head">
+    <h2>Chaaron Demo Ek Nazar Me</h2>
+    <p>Har card par wahi jaankari hai jo asli invite me hoti hai — jodi, tareekh, sheher, theme, karyakram aur price tier. Ye chaaron <b>sample/demo</b> hain — inme diye naam aur jodiyan kaalpanik hain.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <img src="assets/asset-1.webp" alt="Maroon-gold sajawat wala paramparik Hindu vivah mandap, gende ke haar aur diye" />
+      <div class="body">
+        <span class="demolabel">SAMPLE · DEMO 1 · STANDARD</span>
+        <h3 class="dev">आरव शर्मा ❤ प्रिया वर्मा</h3>
+        <p class="meta"><b>Tareekh:</b> Ravivaar, 16 May 2027 · <b>Venue:</b> Lajpat Bhawan Lawn, Motijheel, Kanpur</p>
+        <div class="tags"><span class="tag">Paramparik UP</span><span class="tag">Hindi-first</span><span class="tag">Devanagari + Roman switch</span></div>
+        <p class="fnlist"><b>Karyakram:</b> Haldi · Mehndi · Vivah · Reception</p>
+        <p class="meta"><b>Price tier:</b> Standard ₹2,499</p>
+        <button class="btn" data-open="invite1">Poora Invite Dekho</button>
+      </div>
+    </article>
+    <article class="card">
+      <img src="assets/asset-2.webp" alt="Ivory aur sage-green rang ki modern minimal shaadi sajawat, safed phoolon ka arch" loading="lazy" decoding="async" />
+      <div class="body">
+        <span class="demolabel">SAMPLE · DEMO 2 · STANDARD</span>
+        <h3>Kabir Malhotra ❤ Ananya Gupta</h3>
+        <p class="meta"><b>Date:</b> Sunday, 14 February 2027 · <b>Venue:</b> Vivanta Lucknow, Gomti Nagar, Lucknow</p>
+        <div class="tags"><span class="tag">Modern Minimal</span><span class="tag">English</span><span class="tag">Clean &amp; Airy</span></div>
+        <p class="fnlist"><b>Functions:</b> Engagement · Sangeet · Wedding · Reception</p>
+        <p class="meta"><b>Price tier:</b> Standard ₹2,499</p>
+        <button class="btn" data-open="invite2">Poora Invite Dekho</button>
+      </div>
+    </article>
+    <article class="card">
+      <img src="assets/asset-3.webp" alt="Emerald-green aur sunehri sajawat wala premium royal shaadi stage, jhumar aur phool" loading="lazy" decoding="async" />
+      <div class="body">
+        <span class="demolabel">SAMPLE · DEMO 3 · PREMIUM</span>
+        <h3>Vihaan Singh ❤ Ishita Rathore</h3>
+        <p class="meta"><b>Tareekh:</b> Ravivaar, 6 June 2027 · <b>Venue:</b> The Landmark Hotel, Kanpur</p>
+        <div class="tags"><span class="tag">Premium Animated</span><span class="tag">Har parivaar ke liye alag greeting</span><span class="tag">Live RSVP ginti</span></div>
+        <p class="fnlist"><b>Karyakram:</b> Haldi · Mehndi-Sangeet · Vivah · Reception</p>
+        <p class="meta"><b>Price tier:</b> Premium ₹3,999</p>
+        <button class="btn" data-open="invite3">Poora Invite Dekho</button>
+      </div>
+    </article>
+    <article class="card">
+      <img src="assets/asset-4.webp" alt="Mint-green aur sunehri Nikah sajawat, safed gulaabon ki phool-pardi aur geometric arch" loading="lazy" decoding="async" />
+      <div class="body">
+        <span class="demolabel">SAMPLE · DEMO 4 · STANDARD</span>
+        <h3>Armaan Khan ❤ Zara Sheikh</h3>
+        <p class="meta"><b>Date:</b> Friday (Jumma), 29 January 2027 · <b>Venue:</b> Hotel Clarks Avadh, Lucknow</p>
+        <div class="tags"><span class="tag">Nikah</span><span class="tag">Elegant Green-Gold</span><span class="tag">Urdu-andaaz izzat bhara</span></div>
+        <p class="fnlist"><b>Functions:</b> Mehndi · Nikah · Walima</p>
+        <p class="meta"><b>Price tier:</b> Standard ₹2,499</p>
+        <button class="btn" data-open="invite4">Poora Invite Dekho</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="viewer">
+  <div class="sec-head">
+    <h2>Invite Khol Ke Dekho</h2>
+    <p>Neeche ke button se demo badlo — countdown, karyakram, map aur RSVP har invite ke andar live hai. RSVP bhar ke dekho, confirmation turant milega. <b>Note:</b> ye demo page hai — RSVP entries kahin save nahi hoti, jawab sirf isi page par dikhta hai.</p>
+  </div>
+  <nav class="cats" aria-label="Demo chuno">
+    <button data-open="invite1" aria-selected="true">1 · Paramparik Hindi</button>
+    <button data-open="invite2" aria-selected="false">2 · Modern English</button>
+    <button data-open="invite3" aria-selected="false">3 · Premium Personalised</button>
+    <button data-open="invite4" aria-selected="false">4 · Nikah</button>
+  </nav>
+
+  <!-- ============ INVITE 1 : TRADITIONAL HINDI ============ -->
+  <article class="invite active" id="invite1">
+    <div class="banner">
+      <img src="assets/asset-1.webp" alt="Paramparik vivah mandap, maroon-gold sajawat aur gende ke haar" />
+      <div class="overlay">
+        <span class="demolabel">SAMPLE · DEMO — KAALPANIK JODI</span>
+        <h3 class="lt dev" data-dev="॥ श्री गणेशाय नमः ॥ आरव संग प्रिया" data-rom="॥ Shri Ganeshaya Namah ॥ Aarav Sang Priya">॥ श्री गणेशाय नमः ॥ आरव संग प्रिया</h3>
+        <p class="lt" data-dev="रविवार, 16 मई 2027 · लाजपत भवन लॉन, मोतीझील, कानपुर" data-rom="Ravivaar, 16 May 2027 · Lajpat Bhawan Lawn, Motijheel, Kanpur">रविवार, 16 मई 2027 · लाजपत भवन लॉन, मोतीझील, कानपुर</p>
+      </div>
+    </div>
+    <div class="inner">
+      <p class="note">Bhasha badal ke dekho — yehi switch asal invite me bhi milega, taaki dada-dadi Devanagari me aur dost Roman Hindi me padh saken:</p>
+      <div class="langtoggle" role="group" aria-label="Demo 1 ki bhasha">
+        <button id="btnDev" aria-pressed="true">देवनागरी</button>
+        <button id="btnRom" aria-pressed="false">Roman Hindi</button>
+      </div>
+      <p class="lt dev" data-dev="शर्मा परिवार सादर निमंत्रण देता है — अपने पुत्र आरव (सुपुत्र श्री राकेश शर्मा एवं श्रीमती सुनीता शर्मा) का विवाह वर्मा परिवार की सुपुत्री प्रिया (सुपुत्री श्री अनिल वर्मा एवं श्रीमती रीता वर्मा) के साथ सुनिश्चित हुआ है। आपका आशीर्वाद ही सबसे बड़ा उपहार है।" data-rom="Sharma parivaar saadar nimantran deta hai — apne putra Aarav (suputra Shri Rakesh Sharma evam Shrimati Sunita Sharma) ka vivah Verma parivaar ki suputri Priya (suputri Shri Anil Verma evam Shrimati Rita Verma) ke saath sunishchit hua hai. Aapka aashirvaad hi sabse bada uphaar hai.">शर्मा परिवार सादर निमंत्रण देता है — अपने पुत्र आरव (सुपुत्र श्री राकेश शर्मा एवं श्रीमती सुनीता शर्मा) का विवाह वर्मा परिवार की सुपुत्री प्रिया (सुपुत्री श्री अनिल वर्मा एवं श्रीमती रीता वर्मा) के साथ सुनिश्चित हुआ है। आपका आशीर्वाद ही सबसे बड़ा उपहार है।</p>
+
+      <h3 class="lt dev" data-dev="विवाह में कितने दिन बाकी?" data-rom="Vivah me kitne din baaki?">विवाह में कितने दिन बाकी?</h3>
+      <div class="count" data-countdown="2027-05-16T19:00:00+05:30"><div><b data-d>–</b><span>Din</span></div><div><b data-h>–</b><span>Ghante</span></div><div><b data-m>–</b><span>Minute</span></div><div><b data-s>–</b><span>Second</span></div></div>
+
+      <div class="cols">
+        <div>
+          <h3 class="lt dev" data-dev="कार्यक्रम" data-rom="Karyakram">कार्यक्रम</h3>
+          <ul class="timeline">
+            <li><b class="lt" data-dev="हल्दी" data-rom="Haldi">हल्दी</b><div class="when">शुक्रवार, 14 मई 2027 · सुबह 10 बजे · शर्मा निवास, तिलक नगर, कानपुर</div></li>
+            <li><b class="lt" data-dev="मेहंदी" data-rom="Mehndi">मेहंदी</b><div class="when">शनिवार, 15 मई 2027 · शाम 5 बजे · लाजपत भवन लॉन, मोतीझील, कानपुर</div></li>
+            <li><b class="lt" data-dev="विवाह (बारात स्वागत शाम 7 बजे)" data-rom="Vivah (Baraat swagat shaam 7 baje)">विवाह (बारात स्वागत शाम 7 बजे)</b><div class="when">रविवार, 16 मई 2027 · लाजपत भवन लॉन, मोतीझील, कानपुर</div></li>
+            <li><b class="lt" data-dev="आशीर्वाद समारोह (रिसेप्शन)" data-rom="Aashirvaad Samaroh (Reception)">आशीर्वाद समारोह (रिसेप्शन)</b><div class="when">सोमवार, 17 मई 2027 · शाम 7 बजे · लाजपत भवन लॉन, मोतीझील, कानपुर</div></li>
+          </ul>
+          <h3 class="lt dev" data-dev="स्थान" data-rom="Sthaan (Venue)">स्थान</h3>
+          <p>Lajpat Bhawan Lawn, Motijheel, Kanpur, Uttar Pradesh</p>
+          <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&query=Lajpat+Bhawan+Motijheel+Kanpur" target="_blank" rel="noopener">📍 Google Maps Par Rasta Dekho</a>
+        </div>
+        <div>
+          <h3 class="lt dev" data-dev="आएंगे या नहीं — बताइए (RSVP)" data-rom="Aayenge ya nahi — bataiye (RSVP)">आएंगे या नहीं — बताइए (RSVP)</h3>
+          <form class="rsvp" data-rsvp="invite1">
+            <label>Aapka naam<input required name="guest" placeholder="e.g. Ramesh Gupta" /></label>
+            <label>Kaun sa karyakram?
+              <select name="fn"><option>Haldi — 14 May</option><option>Mehndi — 15 May</option><option selected>Vivah — 16 May</option><option>Reception — 17 May</option></select></label>
+            <div class="radio-row">
+              <label><input type="radio" name="attend" value="yes" checked /> Haan, aaunga/aaungi</label>
+              <label><input type="radio" name="attend" value="no" /> Nahi aa paunga</label>
+            </div>
+            <label>Kitne mehman (aap samet)<input type="number" name="count" min="1" max="20" value="2" /></label>
+            <fieldset class="meal"><legend>Khaane ki pasand</legend>
+              <div class="radio-row">
+                <label><input type="radio" name="meal" value="Veg" /> Veg</label>
+                <label><input type="radio" name="meal" value="Non-veg" /> Non-veg</label>
+                <label><input type="radio" name="meal" value="Koi khaas pasand nahi" checked /> Koi khaas pasand nahi</label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">RSVP Bhejo</button>
+          </form>
+          <div class="confirm" data-confirm></div>
+          <div class="headcount"><div>Haan wale jawab: <b data-yes>0</b></div><div>Kul mehman: <b data-guests>0</b></div><div>Veg mehman: <b data-veg>0</b></div><div>Non-veg mehman: <b data-nonveg>0</b></div><div>Nahi wale: <b data-no>0</b></div></div>
+          <table class="breakdown"><thead><tr><th>Karyakram</th><th>Haan</th><th>Mehman</th><th>Veg</th><th>Non-veg</th><th>Nahi</th></tr></thead><tbody data-breakdown></tbody></table>
+          <button class="btn ghost small csvbtn" type="button" data-csv>⬇ Guest list CSV download karo</button>
+          <p class="note">CSV me sirf is browser me bhare gaye RSVP hain (demo) — asal invite me yehi list jode ke paas live jati hai.</p>
+          <p class="note"><b>Ye demo hai</b> — RSVP jawab sirf isi page par dikhta hai, kahin save nahi hota. Asal invite me ye ginti jode ko live dikhti hai.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ INVITE 2 : MODERN ENGLISH ============ -->
+  <article class="invite" id="invite2">
+    <div class="banner">
+      <img src="assets/asset-2.webp" alt="Modern minimal wedding arch with white flowers in soft daylight" loading="lazy" decoding="async" />
+      <div class="overlay">
+        <span class="demolabel">SAMPLE · DEMO — FICTIONAL COUPLE</span>
+        <h3>Kabir &amp; Ananya — Two Hearts, One Beginning</h3>
+        <p>Sunday, 14 February 2027 · Vivanta Lucknow, Gomti Nagar</p>
+      </div>
+    </div>
+    <div class="inner">
+      <p>Together with their families, <b>Kabir Malhotra</b> (son of Mr. Vikram &amp; Mrs. Meera Malhotra) and <b>Ananya Gupta</b> (daughter of Mr. Sanjay &amp; Mrs. Kavita Gupta) invite you to celebrate their wedding in Lucknow. Simple, elegant, and easy to share — this is the invite for couples who like things clean and modern.</p>
+      <h3>Countdown to the Wedding</h3>
+      <div class="count" data-countdown="2027-02-14T19:00:00+05:30"><div><b data-d>–</b><span>Days</span></div><div><b data-h>–</b><span>Hours</span></div><div><b data-m>–</b><span>Minutes</span></div><div><b data-s>–</b><span>Seconds</span></div></div>
+      <div class="cols">
+        <div>
+          <h3>The Celebrations</h3>
+          <ul class="timeline">
+            <li><b>Engagement &amp; Ring Ceremony</b><div class="when">Friday, 12 February 2027 · 7:00 PM · Vivanta Lucknow, Gomti Nagar</div></li>
+            <li><b>Sangeet Night</b><div class="when">Saturday, 13 February 2027 · 7:00 PM · Vivanta Lucknow, Gomti Nagar</div></li>
+            <li><b>The Wedding</b><div class="when">Sunday, 14 February 2027 · Baraat 7:00 PM · Vivanta Lucknow, Gomti Nagar</div></li>
+            <li><b>Reception Dinner</b><div class="when">Monday, 15 February 2027 · 7:30 PM · Vivanta Lucknow, Gomti Nagar</div></li>
+          </ul>
+          <h3>Venue</h3>
+          <p>Vivanta Lucknow, Gomti Nagar, Lucknow, Uttar Pradesh</p>
+          <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&query=Vivanta+Lucknow+Gomti+Nagar" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+        </div>
+        <div>
+          <h3>RSVP — Let Us Know</h3>
+          <form class="rsvp" data-rsvp="invite2">
+            <label>Your name<input required name="guest" placeholder="e.g. Sarah Khan" /></label>
+            <label>Which function?
+              <select name="fn"><option>Engagement — 12 Feb</option><option>Sangeet — 13 Feb</option><option selected>Wedding — 14 Feb</option><option>Reception — 15 Feb</option></select></label>
+            <div class="radio-row">
+              <label><input type="radio" name="attend" value="yes" checked /> Joyfully accepts</label>
+              <label><input type="radio" name="attend" value="no" /> Regretfully declines</label>
+            </div>
+            <label>Number of guests (including you)<input type="number" name="count" min="1" max="20" value="2" /></label>
+            <fieldset class="meal"><legend>Food preference</legend>
+              <div class="radio-row">
+                <label><input type="radio" name="meal" value="Veg" /> Veg</label>
+                <label><input type="radio" name="meal" value="Non-veg" /> Non-veg</label>
+                <label><input type="radio" name="meal" value="Koi khaas pasand nahi" checked /> No preference</label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">Send RSVP</button>
+          </form>
+          <div class="confirm" data-confirm></div>
+          <div class="headcount"><div>Accepts: <b data-yes>0</b></div><div>Total guests: <b data-guests>0</b></div><div>Veg guests: <b data-veg>0</b></div><div>Non-veg guests: <b data-nonveg>0</b></div><div>Declines: <b data-no>0</b></div></div>
+          <table class="breakdown"><thead><tr><th>Function</th><th>Yes</th><th>Guests</th><th>Veg</th><th>Non-veg</th><th>No</th></tr></thead><tbody data-breakdown></tbody></table>
+          <button class="btn ghost small csvbtn" type="button" data-csv>⬇ Download guest list (CSV)</button>
+          <p class="note">The CSV holds only the RSVPs entered in this browser (demo) — in a real invite this same list reaches the couple live.</p>
+          <p class="note"><b>This is a demo</b> — your response shows on this page only and is not saved anywhere. In a real invite, the couple sees this headcount live.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ INVITE 3 : PREMIUM PERSONALISED ============ -->
+  <article class="invite" id="invite3">
+    <div class="banner">
+      <img src="assets/asset-3.webp" alt="Premium royal emerald-gold wedding stage with chandeliers" loading="lazy" decoding="async" />
+      <div class="overlay">
+        <span class="demolabel">SAMPLE · DEMO — KAALPANIK JODI · PREMIUM ₹3,999</span>
+        <h3>Vihaan Singh ❤ Ishita Rathore — Ek Shaahi Shuruaat</h3>
+        <p>Ravivaar, 6 June 2027 · The Landmark Hotel, Kanpur</p>
+      </div>
+    </div>
+    <div class="inner">
+      <p>Premium invite ki sabse khaas baat: <b>har parivaar ko uske naam se, usi ke karyakramon ke saath</b> bulawa milta hai. Chacha ji ko saare function dikhenge, office walo ko sirf Reception, doston ko Mehndi se Vivah tak. Neeche khud try karke dekho —</p>
+      <div class="guestbox">
+        <h3 style="margin-top:0">Apna Personalised Bulawa Dekho</h3>
+        <label style="font-weight:600;display:grid;gap:6px">Apna naam ya guest code likho
+          <input id="guestInput" placeholder="e.g. FAM01 ya Ramesh Chacha" /></label>
+        <div class="samplecodes">
+          <span class="note" style="align-self:center">Try karo:</span>
+          <button data-guest="FAM01">FAM01 — Parivaar</button>
+          <button data-guest="FRD01">FRD01 — Dost</button>
+          <button data-guest="OFF01">OFF01 — Office</button>
+        </div>
+        <button class="btn small" id="guestBtn" style="margin-top:12px">Mera Bulawa Dikhao</button>
+        <div class="guestresult" id="guestResult"></div>
+      </div>
+
+      <h3>Vivah Countdown</h3>
+      <div class="count" data-countdown="2027-06-06T20:00:00+05:30"><div><b data-d>–</b><span>Din</span></div><div><b data-h>–</b><span>Ghante</span></div><div><b data-m>–</b><span>Minute</span></div><div><b data-s>–</b><span>Second</span></div></div>
+      <div class="cols">
+        <div>
+          <h3>Karyakram</h3>
+          <ul class="timeline">
+            <li><b>Haldi</b><div class="when">Shukravaar, 4 June 2027 · subah 10 baje · Singh Farm House, Bithoor Road, Kanpur</div></li>
+            <li><b>Mehndi &amp; Sangeet</b><div class="when">Shanivaar, 5 June 2027 · shaam 6 baje · The Landmark Hotel, Kanpur</div></li>
+            <li><b>Vivah</b><div class="when">Ravivaar, 6 June 2027 · baraat shaam 8 baje · The Landmark Hotel, Kanpur</div></li>
+            <li><b>Reception</b><div class="when">Somvaar, 7 June 2027 · shaam 7:30 baje · The Landmark Hotel, Kanpur</div></li>
+          </ul>
+          <h3>Venue</h3>
+          <p>The Landmark Hotel, Mall Road, Kanpur, Uttar Pradesh</p>
+          <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&query=The+Landmark+Hotel+Kanpur" target="_blank" rel="noopener">📍 Google Maps Par Rasta Dekho</a>
+        </div>
+        <div>
+          <h3>RSVP — Live Ginti Ke Saath</h3>
+          <form class="rsvp" data-rsvp="invite3">
+            <label>Aapka naam<input required name="guest" placeholder="e.g. Ramesh Chacha" /></label>
+            <label>Kaun sa karyakram?
+              <select name="fn"><option>Haldi — 4 Jun</option><option>Mehndi-Sangeet — 5 Jun</option><option selected>Vivah — 6 Jun</option><option>Reception — 7 Jun</option></select></label>
+            <div class="radio-row">
+              <label><input type="radio" name="attend" value="yes" checked /> Haan, aaunga/aaungi</label>
+              <label><input type="radio" name="attend" value="no" /> Nahi aa paunga</label>
+            </div>
+            <label>Kitne mehman (aap samet)<input type="number" name="count" min="1" max="20" value="4" /></label>
+            <fieldset class="meal"><legend>Khaane ki pasand</legend>
+              <div class="radio-row">
+                <label><input type="radio" name="meal" value="Veg" /> Veg</label>
+                <label><input type="radio" name="meal" value="Non-veg" /> Non-veg</label>
+                <label><input type="radio" name="meal" value="Koi khaas pasand nahi" checked /> Koi khaas pasand nahi</label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">RSVP Bhejo</button>
+          </form>
+          <div class="confirm" data-confirm></div>
+          <div class="headcount"><div>Haan wale jawab: <b data-yes>0</b></div><div>Kul mehman: <b data-guests>0</b></div><div>Veg mehman: <b data-veg>0</b></div><div>Non-veg mehman: <b data-nonveg>0</b></div><div>Nahi wale: <b data-no>0</b></div></div>
+          <table class="breakdown"><thead><tr><th>Karyakram</th><th>Haan</th><th>Mehman</th><th>Veg</th><th>Non-veg</th><th>Nahi</th></tr></thead><tbody data-breakdown></tbody></table>
+          <button class="btn ghost small csvbtn" type="button" data-csv>⬇ Guest list CSV download karo</button>
+          <p class="note">CSV me sirf is browser me bhare gaye RSVP hain (demo) — asal invite me yehi list jode ke paas live jati hai.</p>
+          <p class="note"><b>Ye demo hai</b> — ginti sirf isi page par hai, kahin save nahi hoti. Premium asal invite me yehi ginti jode ke phone par live badalti hai — khaane aur baithne ka intezaam andaze se nahi, asal sankhya se hota hai.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ INVITE 4 : NIKAH ============ -->
+  <article class="invite" id="invite4">
+    <div class="banner">
+      <img src="assets/asset-4.webp" alt="Elegant Nikah decor with mint drapes, gold geometric arch and white roses" loading="lazy" decoding="async" />
+      <div class="overlay">
+        <span class="demolabel">SAMPLE · DEMO — FICTIONAL COUPLE</span>
+        <h3>Armaan Khan ❤ Zara Sheikh — Nikah Mubarak</h3>
+        <p>Friday (Jumma), 29 January 2027 · Hotel Clarks Avadh, Lucknow</p>
+      </div>
+    </div>
+    <div class="inner">
+      <p><i>Bismillah-ir-Rahman-ir-Rahim.</i> With the blessings of Allah and the duas of their elders, the families of <b>Armaan Khan</b> (son of Mr. Imran Khan &amp; Mrs. Shabana Khan) and <b>Zara Sheikh</b> (daughter of Mr. Farhan Sheikh &amp; Mrs. Nazia Sheikh) request the honour of your presence at the Nikah ceremony in Lucknow. Aapki shirkat aur dua hi sabse qeemti tohfa hai.</p>
+      <h3>Nikah Countdown</h3>
+      <div class="count" data-countdown="2027-01-29T13:30:00+05:30"><div><b data-d>–</b><span>Days</span></div><div><b data-h>–</b><span>Hours</span></div><div><b data-m>–</b><span>Minutes</span></div><div><b data-s>–</b><span>Seconds</span></div></div>
+      <div class="cols">
+        <div>
+          <h3>Functions</h3>
+          <ul class="timeline">
+            <li><b>Mehndi</b><div class="when">Wednesday, 27 January 2027 · 6:00 PM · Khan Residence, Aminabad, Lucknow</div></li>
+            <li><b>Nikah</b><div class="when">Friday, 29 January 2027 · after Jumma, 1:30 PM · Hotel Clarks Avadh, Hazratganj, Lucknow</div></li>
+            <li><b>Walima (Dinner)</b><div class="when">Sunday, 31 January 2027 · 7:30 PM · Hotel Clarks Avadh, Hazratganj, Lucknow</div></li>
+          </ul>
+          <h3>Venue</h3>
+          <p>Hotel Clarks Avadh, Hazratganj, Lucknow, Uttar Pradesh</p>
+          <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&query=Hotel+Clarks+Avadh+Lucknow" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+        </div>
+        <div>
+          <h3>RSVP</h3>
+          <form class="rsvp" data-rsvp="invite4">
+            <label>Your name<input required name="guest" placeholder="e.g. Bilal Ahmed" /></label>
+            <label>Which function?
+              <select name="fn"><option>Mehndi — 27 Jan</option><option selected>Nikah — 29 Jan</option><option>Walima — 31 Jan</option></select></label>
+            <div class="radio-row">
+              <label><input type="radio" name="attend" value="yes" checked /> InshaAllah, I will attend</label>
+              <label><input type="radio" name="attend" value="no" /> Unable to attend</label>
+            </div>
+            <label>Number of guests (including you)<input type="number" name="count" min="1" max="20" value="3" /></label>
+            <fieldset class="meal"><legend>Food preference</legend>
+              <div class="radio-row">
+                <label><input type="radio" name="meal" value="Veg" /> Veg</label>
+                <label><input type="radio" name="meal" value="Non-veg" /> Non-veg</label>
+                <label><input type="radio" name="meal" value="Koi khaas pasand nahi" checked /> No preference</label>
+              </div>
+            </fieldset>
+            <button class="btn" type="submit">Send RSVP</button>
+          </form>
+          <div class="confirm" data-confirm></div>
+          <div class="headcount"><div>Attending replies: <b data-yes>0</b></div><div>Total guests: <b data-guests>0</b></div><div>Veg guests: <b data-veg>0</b></div><div>Non-veg guests: <b data-nonveg>0</b></div><div>Unable: <b data-no>0</b></div></div>
+          <table class="breakdown"><thead><tr><th>Function</th><th>Yes</th><th>Guests</th><th>Veg</th><th>Non-veg</th><th>No</th></tr></thead><tbody data-breakdown></tbody></table>
+          <button class="btn ghost small csvbtn" type="button" data-csv>⬇ Download guest list (CSV)</button>
+          <p class="note">The CSV holds only the RSVPs entered in this browser (demo) — in a real invite this same list reaches the families live.</p>
+          <p class="note"><b>This is a demo</b> — your response shows on this page only and is not saved anywhere. In a real invite, the families see this headcount live.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="pricing">
+  <div class="sec-head">
+    <h2>Price — Saaf, Likhit, Koi Chhupa Charge Nahi</h2>
+    <p>Bazaar me DIY platforms ₹999 se shuru hote hain (jaise <a href="https://nimantra.in/" target="_blank" rel="noopener">Nimantra</a> ₹999/₹1,999/₹3,999 aur <a href="https://thevowbox.com/invites_home" target="_blank" rel="noopener">VowBox</a> ₹999 base), lekin wahan sab kaam aapko khud karna padta hai. Yahan price thoda upar hai kyunki kaam pura hum karte hain — aap bas photos aur details bhejte ho.</p>
+  </div>
+  <table class="price">
+    <tr><th style="width:34%">Kya milta hai</th><th>Standard · ₹2,499</th><th>Premium · ₹3,999</th></tr>
+    <tr><td>Invite website (mobile-first, WhatsApp share link)</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Jodi ki photos, karyakram, countdown</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Venue ka Google Maps button</td><td>✔</td><td>✔</td></tr>
+    <tr><td>RSVP form + mehmanon ki ginti</td><td>✔</td><td>✔ Live headcount</td></tr>
+    <tr><td>Har karyakram ki alag RSVP ginti (Haldi / Mehndi / Vivah / Reception — kitne haan, kitne mehman, Veg / Non-veg)</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Guest list download (CSV) — saare RSVP ek spreadsheet me</td><td>✔</td><td>✔</td></tr>
+    <tr><td>RSVP me khaane ki pasand — Veg / Non-veg / Koi khaas pasand nahi</td><td>✔</td><td>✔</td></tr>
+    <tr><td>Har parivaar ke liye alag personalised greeting + alag karyakram suchi (Demo 3 jaisa)</td><td>—</td><td>✔</td></tr>
+    <tr><td>Animated / premium design (Demo 3 jaisa)</td><td>—</td><td>✔</td></tr>
+    <tr><td>Revision rounds</td><td colspan="2">2 rounds shamil — likhit me</td></tr>
+    <tr><td>Shaadi postpone ho jaye to?</td><td colspan="2">Tareekh badalne ki edit <b>bilkul free</b> — refund ka chakkar nahi, invite nayi date par chalega</td></tr>
+    <tr><td>Invite kab tak live rahega?</td><td colspan="2">Shaadi ke <b>30 din baad tak</b></td></tr>
+    <tr><td>Payment kaise?</td><td colspan="2">Pehle free preview → pasand aaye to ₹499 advance (secure payment link se) → baaki delivery par<br/><a href="https://imjo.in/gJ9JKp" target="_blank" rel="noopener"><b>₹499 advance yahan pay karein (Instamojo)</b></a> — payment ke baad screenshot WhatsApp par bhej dein, kaam turant shuru ho jayega</td></tr>
+    <tr><td>Refund policy</td><td colspan="2">Preview pasand na aaye to <b>ek paisa nahi</b> — refund ka sawaal hi nahi uthta. Advance ke baad shaadi ki date badal jaye to wahi paisa nayi date par <b>pura adjust</b> ho jata hai (upar wali free date-edit policy); nakad refund nahi hota — ye baat pehle din se likhit me saaf hai · <a href="#refund">Poori refund policy padhein</a></td></tr>
+  </table>
+  <div style="text-align:center;margin-top:22px">
+    <a class="btn wa" style="font-size:1.05rem;padding:14px 26px" href="https://wa.me/919235039317?text=Namaste!%20Mujhe%20apni%20shaadi%20ke%20liye%20digital%20invitation%20ka%20FREE%20preview%20chahiye.%0AJodi%20ke%20naam%3A%20%0AShaadi%20ki%20tareekh%3A%20%0ASheher%20%2F%20Venue%3A%20%0AKisne%20bheja%20(partner%20%2F%20shop%20ka%20naam%2C%20agar%20koi%20ho)%3A%20%0A%0A%E2%80%94%20Nyota%2C%20Digital%20Shaadi%20Invites%2C%20Kanpur" target="_blank" rel="noopener">💬 WhatsApp Par Free Preview Maango</a>
+    <p class="note" style="margin-top:8px">Preview bilkul free · Pasand aaye tabhi ₹499 advance — <a href="https://imjo.in/gJ9JKp" target="_blank" rel="noopener">secure link se pay karein</a></p>
+  </div>
+  <div class="policy">
+    <div><h3>48 ghante me preview</h3><p>Naam, tareekh aur venue WhatsApp par bhejte hi kaam shuru. <b>48 ghante ke andar</b> aapke naamon wala preview taiyaar — pasand aaye to ₹499 advance, final invite delivery par baaki. Der nahi, intezaar nahi.</p></div>
+    <div><h3>Season ki sachchai</h3><p>2026 ke bache muhurat patle hain — Nov me 21, 24, 25, 26 aur Dec me 2–6, 11, 12 (aakhri date 12 Dec). Asli season <b>Jan–Jun 2027</b> hai; May 2027 me 18 shubh tareekhen — sabse bada mahina. <span class="note">Drik Panchang (Delhi/North India) ke anusaar — exact samay apne pandit se confirm karein.</span></p></div>
+    <div><h3>Buzurgon ka khayal</h3><p>Shaadi ke faislon me buzurgon ki raay aksar sabse zyada mayne rakhti hai — isiliye digital card ko chhapa card ka <b>dushman nahi, saathi</b> bataya jata hai: chhapa card ghar ke liye, link sabke phone ke liye.</p></div>
+  </div>
+</section>
+
+<section id="refund">
+  <div class="sec-head">
+    <h2>Refund Policy — Likhit Me Saaf</h2>
+  </div>
+  <div class="policy">
+    <div><h3>Preview pasand na aaye</h3><p>Preview <b>bilkul free</b> hai — pasand na aaye to <b>ek paisa nahi</b> lagta, refund ka sawaal hi nahi uthta.</p></div>
+    <div><h3>Advance ke baad date badal jaye</h3><p>₹499 advance ke baad shaadi ki date badal jaye to wahi paisa nayi date par <b>pura adjust</b> ho jata hai; <b>nakad refund nahi</b> hota.</p></div>
+    <div><h3>Sawaal ho to</h3><p>WhatsApp par poochhein — +91 92350 39317. Ye policy pehle din se likhit me saaf hai.</p></div>
+  </div>
+</section>
+
+<section class="cta-band" id="preview">
+  <h2>Apna Free Preview Banwao</h2>
+  <p>Demo pasand aaya? Ab apni shaadi ka asal preview dekho — aapke naam, aapki tareekh, aapka venue. WhatsApp par bas teen cheezein bhejo: <b>jodi ke naam, shaadi ki tareekh, sheher/venue</b>. 48 ghante me preview aapke phone par.</p>
+  <a class="btn wa" href="https://wa.me/919235039317?text=Namaste!%20Mujhe%20apni%20shaadi%20ke%20liye%20digital%20invitation%20ka%20FREE%20preview%20chahiye.%0AJodi%20ke%20naam%3A%20%0AShaadi%20ki%20tareekh%3A%20%0ASheher%20%2F%20Venue%3A%20%0AKisne%20bheja%20(partner%20%2F%20shop%20ka%20naam%2C%20agar%20koi%20ho)%3A%20%0A%0A%E2%80%94%20Nyota%2C%20Digital%20Shaadi%20Invites%2C%20Kanpur" target="_blank" rel="noopener">💬 WhatsApp Par Free Preview Shuru Karo</a>
+  <p class="note">Preview bilkul free hai · Pasand aaye tabhi ₹499 advance (secure payment link) · Baaki final delivery par</p>
+</section>
+
+<footer>
+  <p style="font-size:1.08rem;color:var(--ink);margin:0 0 12px"><b class="serif">Nyota — Digital Shaadi Invites</b> · Kanpur · WhatsApp: +91 92350 39317</p>
+  <h3>Sources (jaanch 20 October 2026)</h3>
+  <ul>
+    <li>Competition ke price: <a href="https://nimantra.in/" target="_blank" rel="noopener">Nimantra</a> (₹999/₹1,999/₹3,999) · <a href="https://www.makivo.in/invitations" target="_blank" rel="noopener">Makivo</a> (done-for-you ₹1,999/₹3,999, free-preview model) · <a href="https://thevowbox.com/invites_home" target="_blank" rel="noopener">VowBox</a> (₹999 base) · <a href="https://myshaadhilink.in/templates/royal-premium" target="_blank" rel="noopener">My Shaadi Link</a> (₹3,999 Royal Premium)</li>
+    <li>Shaadi bazaar ka aakaar: CAIT ke hisaab se Nov–Dec 2025 season me 46 lakh shaadiyan, ₹6.5 lakh crore ka karobaar — <a href="https://www.thehindubusinessline.com/companies/wedding-season-to-generate-65-lakh-crore-business-cait/article70220786.ece/amp/" target="_blank" rel="noopener">Hindu BusinessLine</a></li>
+    <li>Muhurat 2026–27: <a href="https://www.theweddingfocus.com/blog/wedding-dates-2026/" target="_blank" rel="noopener">The Wedding Focus (2026 dates)</a> · <a href="https://thecuratedknot.com/blog/shaadi-muhurat-2027-auspicious-wedding-dates" target="_blank" rel="noopener">The Curated Knot (2027 ke 96 muhurat)</a> — tareekhen kshetriya panchang se thodi alag ho sakti hain; apne purohit se pakka karein.</li>
+    <li>Khareed vyavhaar (80% couples social media par research, 50% faislon me buzurgon ka asar): <a href="https://zipdo.co/indian-wedding-industry-statistics/" target="_blank" rel="noopener">Zipdo — Indian Wedding Industry Statistics</a> (secondary source).</li>
+  </ul>
+  <p class="note">Nota bene: Selleron ke apne daawe (jaise Nimantra ke “10,000+ couples, 4.9★”) unki apni site ke hain — swatantra jaanch se pakke nahi hue. Is page ke chaaron demo kaalpanik jodiyon par bane hain; venue asal shehron ke jaane-maane sthan hain, map button se aap khud dekh sakte hain.</p>
+  <p class="orn">❦ ❦ ❦</p>
+</footer>
+</div>
+
+<div class="stickybar" aria-label="Free preview ke liye WhatsApp">
+  <div class="txt">Apna FREE preview banao<small>48 ghante me · pasand aaye tab paisa</small></div>
+  <a class="btn wa small" href="https://wa.me/919235039317?text=Namaste!%20Mujhe%20apni%20shaadi%20ke%20liye%20digital%20invitation%20ka%20FREE%20preview%20chahiye.%0AJodi%20ke%20naam%3A%20%0AShaadi%20ki%20tareekh%3A%20%0ASheher%20%2F%20Venue%3A%20%0AKisne%20bheja%20(partner%20%2F%20shop%20ka%20naam%2C%20agar%20koi%20ho)%3A%20%0A%0A%E2%80%94%20Nyota%2C%20Digital%20Shaadi%20Invites%2C%20Kanpur" target="_blank" rel="noopener">💬 WhatsApp Karo</a>
+</div>
+
+<script>
+(function(){
+  // ---- Demo switcher ----
+  var buttons = document.querySelectorAll("[data-open]");
+  function openInvite(id, scroll){
+    document.querySelectorAll(".invite").forEach(function(el){ el.classList.toggle("active", el.id===id); });
+    document.querySelectorAll("nav.cats button").forEach(function(b){ b.setAttribute("aria-selected", b.getAttribute("data-open")===id ? "true":"false"); });
+    if(scroll){ var v=document.getElementById("viewer"); if(v) v.scrollIntoView({behavior:"smooth", block:"start"}); }
+  }
+  buttons.forEach(function(b){ b.addEventListener("click", function(){ openInvite(b.getAttribute("data-open"), true); }); });
+
+  // ---- Countdowns ----
+  function pad(n){ return (n<10?"0":"")+n; }
+  function tick(){
+    document.querySelectorAll("[data-countdown]").forEach(function(box){
+      var target = new Date(box.getAttribute("data-countdown")).getTime();
+      var diff = target - Date.now();
+      if(diff < 0) diff = 0;
+      var d = Math.floor(diff/86400000), h = Math.floor(diff%86400000/3600000), m = Math.floor(diff%3600000/60000), s = Math.floor(diff%60000/1000);
+      box.querySelector("[data-d]").textContent = d;
+      box.querySelector("[data-h]").textContent = pad(h);
+      box.querySelector("[data-m]").textContent = pad(m);
+      box.querySelector("[data-s]").textContent = pad(s);
+    });
+  }
+  tick(); setInterval(tick, 1000);
+
+  // ---- RSVP (in-page demo only — kuch save nahi hota) ----
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function csvCell(v){ v = String(v==null?"":v); return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v; }
+  function buildCSV(rows){
+    var header = ["Naam","Karyakram","Aayenge","Mehman","Khaane ki pasand","Samay"];
+    var lines = [header.map(csvCell).join(",")];
+    rows.forEach(function(r){ lines.push([r.name, r.fn, r.attend==="yes"?"Haan":"Nahi", r.attend==="yes"?r.count:0, r.attend==="yes"?r.meal:"—", r.time].map(csvCell).join(",")); });
+    return "\uFEFF" + lines.join("\r\n");
+  }
+  var totals = {};
+  document.querySelectorAll("form.rsvp").forEach(function(form){
+    var key = form.getAttribute("data-rsvp");
+    var wrap = form.closest(".invite");
+    var defCountEl = form.querySelector("[name=count]");
+    var defCount = defCountEl ? (parseInt(defCountEl.value,10) || 2) : 2;
+    totals[key] = {yes:0, guests:0, veg:0, nonveg:0, no:0};
+    var entries = [];
+    var fnNames = [];
+    form.querySelectorAll("[name=fn] option").forEach(function(o){ fnNames.push(o.value); });
+    var tbody = wrap.querySelector("[data-breakdown]");
+    function renderBreakdown(){
+      var b = {};
+      fnNames.forEach(function(f){ b[f] = {yes:0, guests:0, veg:0, nonveg:0, no:0}; });
+      entries.forEach(function(r){
+        if(!b[r.fn]) b[r.fn] = {yes:0, guests:0, veg:0, nonveg:0, no:0};
+        if(r.attend==="yes"){ b[r.fn].yes++; b[r.fn].guests += r.count; if(r.meal==="Veg") b[r.fn].veg += r.count; else if(r.meal==="Non-veg") b[r.fn].nonveg += r.count; }
+        else b[r.fn].no++;
+      });
+      var html = "";
+      fnNames.forEach(function(f){ var x = b[f]; html += "<tr><td>"+esc(f)+"</td><td>"+x.yes+"</td><td>"+x.guests+"</td><td>"+x.veg+"</td><td>"+x.nonveg+"</td><td>"+x.no+"</td></tr>"; });
+      if(tbody) tbody.innerHTML = html;
+    }
+    renderBreakdown();
+    var mealFs = form.querySelector(".meal");
+    function syncMeal(){ if(mealFs) mealFs.disabled = form.querySelector("[name=attend]:checked").value === "no"; }
+    form.querySelectorAll("[name=attend]").forEach(function(r){ r.addEventListener("change", syncMeal); });
+    syncMeal();
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = form.querySelector("[name=guest]").value.trim();
+      if(!name) return;
+      var fn = form.querySelector("[name=fn]").value;
+      var attend = form.querySelector("[name=attend]:checked").value;
+      var count = parseInt(form.querySelector("[name=count]").value,10) || 1;
+      var mealEl = form.querySelector("[name=meal]:checked");
+      var meal = (attend==="yes" && mealEl) ? mealEl.value : "—";
+      entries.push({name:name, fn:fn, attend:attend, count:count, meal:meal, time:new Date().toLocaleString("en-IN")});
+      var box = wrap.querySelector("[data-confirm]");
+      if(attend==="yes"){
+        totals[key].yes++; totals[key].guests += count;
+        if(meal==="Veg") totals[key].veg += count; else if(meal==="Non-veg") totals[key].nonveg += count;
+        box.innerHTML = "🎉 <b>Dhanyavaad, "+esc(name)+" ji!</b> Aapka RSVP mil gaya — <b>"+esc(fn)+"</b> me <b>"+count+" mehman</b> ("+esc(meal)+") ke saath aapka intezaar rahega. (Demo confirmation — asal invite me ye seedha jode ke paas jata hai.)";
+      } else {
+        totals[key].no++;
+        box.innerHTML = "🙏 <b>Dhanyavaad, "+esc(name)+" ji!</b> Aapka jawab note kar liya — <b>"+esc(fn)+"</b> me aapki kami khalegi, duaen zaroor bhejein. (Demo confirmation.)";
+      }
+      box.classList.add("show");
+      wrap.querySelector("[data-yes]").textContent = totals[key].yes;
+      wrap.querySelector("[data-guests]").textContent = totals[key].guests;
+      wrap.querySelector("[data-no]").textContent = totals[key].no;
+      var vegEl = wrap.querySelector("[data-veg]"); if(vegEl) vegEl.textContent = totals[key].veg;
+      var nonvegEl = wrap.querySelector("[data-nonveg]"); if(nonvegEl) nonvegEl.textContent = totals[key].nonveg;
+      renderBreakdown();
+      form.reset();
+      var c = form.querySelector("[name=count]"); if(c) c.value = defCount;
+      syncMeal();
+    });
+    var csvBtn = wrap.querySelector("[data-csv]");
+    if(csvBtn) csvBtn.addEventListener("click", function(){
+      var blob = new Blob([buildCSV(entries)], {type:"text/csv;charset=utf-8"});
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "nyota-guest-list-" + key + ".csv";
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 500);
+    });
+  });
+
+  // ---- Demo 1 language switch ----
+  function setLang(roman){
+    document.querySelectorAll("#invite1 .lt").forEach(function(el){
+      el.textContent = roman ? el.getAttribute("data-rom") : el.getAttribute("data-dev");
+    });
+    document.getElementById("btnDev").setAttribute("aria-pressed", roman?"false":"true");
+    document.getElementById("btnRom").setAttribute("aria-pressed", roman?"true":"false");
+  }
+  document.getElementById("btnDev").addEventListener("click", function(){ setLang(false); });
+  document.getElementById("btnRom").addEventListener("click", function(){ setLang(true); });
+
+  // ---- Demo 3 personalised guest lookup ----
+  var guests = [
+    {keys:["fam01","ramesh","chacha","parivaar","family"], title:"Aadarniya Ramesh Chacha Ji evam Parivaar 🙏", line:"Aap parivaar ke sabse bade hain — aapka aashirvaad hi is shaadi ki shaan hai. Aap sabhi karyakramon me saadar aamantrit hain:", fns:["Haldi — 4 Jun, Singh Farm House","Mehndi & Sangeet — 5 Jun, The Landmark Hotel","Vivah — 6 Jun, The Landmark Hotel","Reception — 7 Jun, The Landmark Hotel"]},
+    {keys:["frd01","neha","dost","friend"], title:"Hey Neha! 🎉", line:"Tum sirf dost nahi, is shaadi ki jaan ho — dance floor tumhara intezaar kar raha hai. Tum in karyakramon me aamantrit ho:", fns:["Mehndi & Sangeet — 5 Jun, The Landmark Hotel","Vivah — 6 Jun, The Landmark Hotel"]},
+    {keys:["off01","office","colleague","team"], title:"Dear Colleagues,", line:"Vihaan aur unka parivaar aapko Vivah ke Reception par saadar aamantrit karta hai — dinner ke saath nayi jodi ko aashirvaad dein:", fns:["Reception — 7 Jun, shaam 7:30 baje, The Landmark Hotel, Kanpur"]}
+  ];
+  function lookup(){
+    var q = document.getElementById("guestInput").value.trim().toLowerCase();
+    var res = document.getElementById("guestResult");
+    var found = null;
+    if(q){ guests.forEach(function(g){ g.keys.forEach(function(k){ if(q.indexOf(k)!==-1) found = g; }); }); }
+    if(found){
+      res.innerHTML = "<h4 style='margin:0 0 6px'>"+found.title+"</h4><p style='margin:0 0 8px'>"+found.line+"</p><ul style='margin:0;padding-left:20px'>"+found.fns.map(function(f){return "<li>"+f+"</li>";}).join("")+"</ul><p class='note' style='margin-top:8px'>Yehi personalised link WhatsApp par seedha is mehman ko jayega — koi confusion nahi ki kis function me aana hai.</p>";
+    } else {
+      res.innerHTML = "<b>Ye code/naam demo list me nahi mila.</b> Upar diye teen sample try karo: <b>FAM01</b> (parivaar — saare function), <b>FRD01</b> (dost — Mehndi se Vivah), <b>OFF01</b> (office — sirf Reception). Asal invite me har mehman ka apna code hota hai.";
+    }
+    res.classList.add("show");
+  }
+  document.getElementById("guestBtn").addEventListener("click", lookup);
+  document.querySelectorAll("[data-guest]").forEach(function(b){
+    b.addEventListener("click", function(){ document.getElementById("guestInput").value = b.getAttribute("data-guest"); lookup(); });
+  });
+  document.getElementById("guestInput").addEventListener("keydown", function(e){ if(e.key==="Enter"){ e.preventDefault(); lookup(); } });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nyota Standard Invite — Pattern (RSVP: per-function + meal + CSV)</title>
+<!--
+  NYOTA STANDARD ₹2,499 — INVITE PATTERN (WORKING FILE, NOT THE LIVE DEMO)
+  ------------------------------------------------------------------------
+  Status: LOCAL PATTERN ONLY. Not linked from index.html, not deployed.
+  Demo copy rule: index.html is untouched. This file becomes demo/customer
+  copy ONLY after the 3 features are verified AND Ravi says so.
+
+  How a real customer invite is made from this file: replace the
+  PLACEHOLDER values (couple names, families, dates, venue, function list)
+  with the customer's intake, keep the RSVP block + script as-is.
+
+  The 3 Standard features in this file:
+  1. Per-function RSVP breakdown — guests counted per function, not one total.
+  2. Guest-list CSV download — every RSVP entry exported as a spreadsheet.
+  3. Meal-preference RSVP question — Veg / Non-veg / Koi khaas pasand nahi.
+
+  Honest limit (pattern level): entries are stored in THIS browser
+  (localStorage) so the couple can view/download them. Guests on different
+  phones do NOT feed one central list until a form backend/endpoint is
+  added — that backend is a separate step, not built here (no signup/spend).
+  The CSV below therefore exports the entries recorded in this browser.
+-->
+<style>
+  :root{--gold:#b9975b;--ink:#2b2118;--bg:#fdf8f1;--card:#fff;--line:#e8dcc8}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+  .wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+  .banner{background:linear-gradient(135deg,#7a1f2b,#b9975b);color:#fff;border-radius:16px;padding:28px 20px;text-align:center}
+  .banner h1{margin:6px 0;font-size:1.7rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px}
+  h2{margin:0 0 10px;font-size:1.2rem}
+  form.rsvp{display:grid;gap:10px}
+  form.rsvp label{font-weight:600;font-size:.95rem;display:grid;gap:4px}
+  input,select{padding:10px;border:1px solid var(--line);border-radius:8px;font-size:1rem}
+  .radio-row{display:flex;flex-wrap:wrap;gap:14px;font-weight:400}
+  .radio-row label{display:flex;gap:6px;align-items:center;font-weight:400}
+  .btn{background:#7a1f2b;color:#fff;border:0;border-radius:10px;padding:12px 20px;font-size:1rem;cursor:pointer}
+  .btn.ghost{background:#fff;color:#7a1f2b;border:1px solid #7a1f2b}
+  .btn.small{padding:8px 14px;font-size:.9rem}
+  .confirm{display:none;margin-top:12px;border-radius:12px;padding:14px;background:#fdf8f1;border:1px solid var(--gold)}
+  .confirm.show{display:block}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th,td{border:1px solid var(--line);padding:8px;text-align:left}
+  th{background:#fdf8f1}
+  .note{font-size:.88rem;color:#6b5d4f}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="banner">
+    <span>NYOTA · STANDARD ₹2,499 · PATTERN (NOT A LIVE DEMO)</span>
+    <h1>[Dulha] ❤ [Dulhan] — Shaadi ka Bulawa</h1>
+    <p>[Shaadi ki tareekh] · [Venue ka naam, Sheher]</p>
+    <p class="note" style="color:#fff">Ye pattern file hai — bracket wale naam/tareekh/venue har customer ke intake se badle jayenge.</p>
+  </div>
+
+  <div class="card">
+    <h2>Karyakram</h2>
+    <ul>
+      <li><b>Haldi</b> — [tareekh, samay, venue]</li>
+      <li><b>Mehndi</b> — [tareekh, samay, venue]</li>
+      <li><b>Vivah</b> — [tareekh, samay, venue]</li>
+      <li><b>Reception</b> — [tareekh, samay, venue]</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Aayenge ya nahi — bataiye (RSVP)</h2>
+    <form class="rsvp" id="rsvpForm">
+      <label>Aapka naam<input required name="guest" placeholder="e.g. Ramesh Gupta" /></label>
+      <label>Kaun sa karyakram?
+        <select name="fn">
+          <option>Haldi</option><option>Mehndi</option>
+          <option selected>Vivah</option><option>Reception</option>
+        </select></label>
+      <div class="radio-row">
+        <label><input type="radio" name="attend" value="yes" checked /> Haan, aaunga/aaungi</label>
+        <label><input type="radio" name="attend" value="no" /> Nahi aa paunga</label>
+      </div>
+      <label>Kitne mehman (aap samet)<input type="number" name="count" min="1" max="20" value="2" /></label>
+      <fieldset id="mealFieldset" style="border:1px solid var(--line);border-radius:8px;padding:10px">
+        <legend style="font-weight:600">Khaane ki pasand (Feature 3 — meal-preference question)</legend>
+        <div class="radio-row">
+          <label><input type="radio" name="meal" value="Veg" /> Veg</label>
+          <label><input type="radio" name="meal" value="Non-veg" /> Non-veg</label>
+          <label><input type="radio" name="meal" value="Koi khaas pasand nahi" checked /> Koi khaas pasand nahi</label>
+        </div>
+        <p class="note" style="margin:8px 0 0">Ye sawaal sirf tab poocha jata hai jab mehman aa raha ho. "Nahi aa paunga" chunte hi ye band ho jata hai.</p>
+      </fieldset>
+      <!-- Honeypot — guests never see/fill this; bots do. Server (v2) rejects filled ones. -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+      <button class="btn" type="submit">RSVP Bhejo</button>
+    </form>
+    <div class="confirm" id="confirmBox"></div>
+  </div>
+
+  <div class="card">
+    <h2>Har karyakram ke hisaab se ginti (Feature 1 — per-function breakdown)</h2>
+    <p class="note">Ek kul total nahi — har function ke liye alag: kitne jawab, kitne mehman, kitne Veg / Non-veg.</p>
+    <table>
+      <thead><tr><th>Karyakram</th><th>Haan wale jawab</th><th>Kul mehman</th><th>Veg mehman</th><th>Non-veg mehman</th><th>Nahi wale</th></tr></thead>
+      <tbody id="breakdownBody"></tbody>
+      <tfoot><tr><th>KUL TOTAL</th><th id="totYes">0</th><th id="totGuests">0</th><th id="totVeg">0</th><th id="totNonveg">0</th><th id="totNo">0</th></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Guest list (Feature 2 — CSV/spreadsheet download)</h2>
+    <p class="note">Neeche har RSVP entry dikhti hai. "CSV download karo" dabate hi yahi list spreadsheet (.csv) ban kar download ho jati hai — Excel/Google Sheets me khulti hai.</p>
+    <div class="row" style="margin:10px 0">
+      <button class="btn small" id="csvBtn">⬇ Guest list CSV download karo</button>
+      <button class="btn ghost small" id="clearBtn">List saaf karo (test entries hatayein)</button>
+      <span class="note" id="entryCount"></span>
+    </div>
+    <table>
+      <thead><tr><th>Naam</th><th>Karyakram</th><th>Aayenge?</th><th>Mehman</th><th>Khaane ki pasand</th><th>Samay</th></tr></thead>
+      <tbody id="guestBody"></tbody>
+    </table>
+    <p class="note">Note: entries isi browser me save hoti hain (localStorage) aur couple ki Sheet me bhi sync hoti hain — alag-alag phone se aaye jawab ek jagah jud jaate hain. (Sheet sync na ho paye to bhi local copy surakshit rehti hai.)</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var FUNCTIONS = ["Haldi","Mehndi","Vivah","Reception"];
+  var STORE_KEY = "nyota-standard-rsvp-v1";
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function load(){ try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch(e){ return []; } }
+  function save(entries){ try { localStorage.setItem(STORE_KEY, JSON.stringify(entries)); } catch(e){} }
+  var entries = load();
+
+  // CSV escaping: quotes doubled, field quoted if it contains , " or newline.
+  function csvCell(v){
+    v = (v === null || v === undefined) ? "" : String(v);
+    return (/[",\n\r]/.test(v)) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function buildCSV(rows){
+    var header = ["Naam","Karyakram","Aayenge","Mehman","Khaane ki pasand","Samay"];
+    var lines = [header.map(csvCell).join(",")];
+    rows.forEach(function(r){
+      lines.push([r.name, r.fn, r.attend === "yes" ? "Haan" : "Nahi",
+        r.attend === "yes" ? r.count : 0,
+        r.attend === "yes" ? r.meal : "—", r.time].map(csvCell).join(","));
+    });
+    return "\ufeff" + lines.join("\r\n") + "\r\n"; // BOM = Hindi Excel me sahi dikhe
+  }
+  function breakdown(){
+    var b = {};
+    FUNCTIONS.forEach(function(f){ b[f] = {yes:0, guests:0, veg:0, nonveg:0, no:0}; });
+    entries.forEach(function(r){
+      if(!b[r.fn]) b[r.fn] = {yes:0, guests:0, veg:0, nonveg:0, no:0};
+      if(r.attend === "yes"){
+        b[r.fn].yes++; b[r.fn].guests += r.count;
+        if(r.meal === "Veg") b[r.fn].veg += r.count;
+        else if(r.meal === "Non-veg") b[r.fn].nonveg += r.count;
+      } else { b[r.fn].no++; }
+    });
+    return b;
+  }
+  function render(){
+    var b = breakdown(), html = "", t = {yes:0, guests:0, veg:0, nonveg:0, no:0};
+    FUNCTIONS.forEach(function(f){
+      var x = b[f];
+      t.yes += x.yes; t.guests += x.guests; t.veg += x.veg; t.nonveg += x.nonveg; t.no += x.no;
+      html += "<tr><td>"+esc(f)+"</td><td data-fn='"+esc(f)+"' data-col='yes'>"+x.yes+"</td><td data-fn='"+esc(f)+"' data-col='guests'>"+x.guests+"</td><td data-fn='"+esc(f)+"' data-col='veg'>"+x.veg+"</td><td data-fn='"+esc(f)+"' data-col='nonveg'>"+x.nonveg+"</td><td data-fn='"+esc(f)+"' data-col='no'>"+x.no+"</td></tr>";
+    });
+    document.getElementById("breakdownBody").innerHTML = html;
+    document.getElementById("totYes").textContent = t.yes;
+    document.getElementById("totGuests").textContent = t.guests;
+    document.getElementById("totVeg").textContent = t.veg;
+    document.getElementById("totNonveg").textContent = t.nonveg;
+    document.getElementById("totNo").textContent = t.no;
+    document.getElementById("guestBody").innerHTML = entries.map(function(r){
+      return "<tr><td>"+esc(r.name)+"</td><td>"+esc(r.fn)+"</td><td>"+(r.attend==="yes"?"Haan":"Nahi")+"</td><td>"+(r.attend==="yes"?r.count:0)+"</td><td>"+(r.attend==="yes"?esc(r.meal):"—")+"</td><td>"+esc(r.time)+"</td></tr>";
+    }).join("") || "<tr><td colspan='6' class='note'>Abhi koi RSVP nahi — upar form bharke dekho.</td></tr>";
+    document.getElementById("entryCount").textContent = entries.length + " entry";
+  }
+  // Meal question disables when guest declines (Feature 3 behaviour).
+  var form = document.getElementById("rsvpForm");
+  function syncMeal(){
+    var attending = form.querySelector("[name=attend]:checked").value === "yes";
+    document.getElementById("mealFieldset").disabled = !attending;
+  }
+  form.querySelectorAll("[name=attend]").forEach(function(r){ r.addEventListener("change", syncMeal); });
+  syncMeal();
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = form.querySelector("[name=guest]").value.trim();
+    if(!name) return;
+    var fn = form.querySelector("[name=fn]").value;
+    var attend = form.querySelector("[name=attend]:checked").value;
+    var count = parseInt(form.querySelector("[name=count]").value, 10) || 1;
+    if(count < 1) count = 1; if(count > 20) count = 20;
+    var mealEl = form.querySelector("[name=meal]:checked");
+    var meal = (attend === "yes" && mealEl) ? mealEl.value : "—";
+    entries.push({name:name, fn:fn, attend:attend, count:count, meal:meal,
+      time:new Date().toLocaleString("hi-IN", {timeZone:"Asia/Kolkata"})});
+    save(entries);
+    var box = document.getElementById("confirmBox");
+    box.innerHTML = attend === "yes"
+      ? "🎉 <b>Dhanyavaad, "+esc(name)+" ji!</b> <b>"+esc(fn)+"</b> me <b>"+count+" mehman</b> ("+esc(meal)+") ke saath aapka intezaar rahega."
+      : "🙏 <b>Dhanyavaad, "+esc(name)+" ji!</b> <b>"+esc(fn)+"</b> me aapki kami khalegi, duaen zaroor bhejein.";
+    box.classList.add("show");
+    render();
+    form.reset();
+    form.querySelector("[name=fn]").value = fn;
+    syncMeal();
+  });
+
+  document.getElementById("csvBtn").addEventListener("click", function(){
+    var blob = new Blob([buildCSV(entries)], {type:"text/csv;charset=utf-8"});
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "nyota-guest-list.csv";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
+  document.getElementById("clearBtn").addEventListener("click", function(){
+    if(!entries.length) return;
+    entries = []; save(entries);
+    document.getElementById("confirmBox").classList.remove("show");
+    render();
+  });
+  // Exposed ONLY for the local test harness (window.__nyotaTest); harmless in production.
+  window.__nyotaTest = { buildCSV: buildCSV, csvCell: csvCell, getEntries: function(){ return entries; } };
+  render();
+})();
+</script>
+<script>
+  // Nyota RSVP backend sync — hardened snippet (30 Oct 2026, pairs with Apps
+  // Script v2; SAFE with the live v1 script too — v1 ignores the extra fields).
+  // Guest-facing behaviour unchanged: local save + CSV already happened; guest
+  // still sees success even if Sheet sync fails.
+  // WHY TRACKED VALUES: the local submit listener runs BEFORE this listener and
+  // resets the form, so reading FormData here would send an EMPTY guest name.
+  // Values are therefore tracked on input/change and sent from that record;
+  // after sending, tracking refreshes from the (fresh, reset) form.
+  // PENDING QUEUE: on NETWORK failure only, the payload is queued in localStorage
+  // and retried on the next page load. A lost/unparseable response is NOT queued,
+  // to avoid duplicate Sheet rows. A server "error" means rejected — no retry.
+  var RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx3kcnFlJZr59C3bYsb535M-az_P_36i9Fn6mC6Tw_XOSA61qW-6LRyW3IA_RDwN2XxYQ/exec';
+  var RSVP_FORM_KEY = ''; // host sets per customer invite; empty = server skips key check
+  (function () {
+    var form = document.getElementById('rsvpForm');
+    if (!form) return;
+    var PENDING_KEY = 'nyota-rsvp-pending-v1';
+    var FIELDS = ['guest', 'fn', 'attend', 'count', 'meal', 'website'];
+    var tracked = {};
+    function syncTracked() {
+      var data = new FormData(form);
+      FIELDS.forEach(function (k) {
+        var v = data.get(k);
+        if (v !== null && v !== undefined) tracked[k] = v;
+      });
+    }
+    form.addEventListener('input', syncTracked);
+    form.addEventListener('change', syncTracked);
+    syncTracked();
+    function loadPending(){ try { return JSON.parse(localStorage.getItem(PENDING_KEY)) || []; } catch (e) { return []; } }
+    function savePending(q){ try { localStorage.setItem(PENDING_KEY, JSON.stringify(q)); } catch (e) {} }
+    function bodyFrom(obj) {
+      var body = new URLSearchParams();
+      FIELDS.forEach(function (k) { body.append(k, obj[k] || ''); });
+      body.append('key', RSVP_FORM_KEY);
+      return body;
+    }
+    function sendPayload(body) {
+      return fetch(RSVP_ENDPOINT, { method: 'POST', body: body }).then(function (r) { return r.text(); }).then(function (t) {
+        try { return JSON.parse(t); } catch (e) { return { result: 'unknown' }; }
+      });
+    }
+    function flushPending() {
+      var q = loadPending();
+      if (!q.length) return;
+      function step() {
+        if (!q.length) { savePending([]); return; }
+        sendPayload(bodyFrom(q[0])).then(function (res) {
+          q.shift(); // ok = delivered; error = server rejected (retry won't help); unknown = dropped to avoid dupes
+          savePending(q);
+          step();
+        }).catch(function () { savePending(q); }); // offline: keep queue, stop here
+      }
+      step();
+    }
+    form.addEventListener('submit', function () {
+      try {
+        var payload = {};
+        FIELDS.forEach(function (k) { payload[k] = tracked[k] || ''; });
+        if (!payload.guest.trim()) { syncTracked(); return; } // matches local guard: no name = no RSVP
+        if (payload.attend === 'no') payload.meal = '—';
+        sendPayload(bodyFrom(payload)).catch(function () {
+          var q = loadPending(); q.push(payload); savePending(q);
+        });
+        syncTracked(); // local listener already reset the form — tracked now follows the fresh form
+      } catch (e) { /* never break the guest-facing RSVP */ }
+    });
+    flushPending();
+  })();
+</script>
+</body>
+</html>

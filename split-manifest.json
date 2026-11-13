@@ -1,0 +1,18 @@
+{
+ "asset-1.webp": {
+  "size": 79320,
+  "sha1": "42afecbba22507217a4b1c1b2b543236c179aeac"
+ },
+ "asset-2.webp": {
+  "size": 81554,
+  "sha1": "25781cd68c905ce66de85d75a6d6196c9979cd48"
+ },
+ "asset-3.webp": {
+  "size": 86508,
+  "sha1": "f9ad4f6e42a18f550ff9ad7101f6f821e661efcd"
+ },
+ "asset-4.webp": {
+  "size": 81654,
+  "sha1": "a10f127755f251c1aa0ac245922b4a636ea43f5f"
+ }
+}
