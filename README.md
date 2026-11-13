@@ -17,5 +17,4 @@ Nyota builds wedding-invitation websites: ₹2,499 and ₹3,999 packages, free p
 
 ## Notes
 
-- The demo images (`assets/*.webp`, `ig-post-1.jpg`) are not in this repo yet — the live demo has them.
 - `.env.local` is intentionally excluded.
